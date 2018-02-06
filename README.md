@@ -1,10 +1,26 @@
-# tianmao_shop_spider
+# 天猫店铺爬虫
+## 安装依赖包
+```
+pip install pyquery
+pip install requests
+```
 
-使用方式：
-1. 单条店铺url修改 shop_url 的内容，例如shop_url = 'https://xiaomi.tmall.com'，输入想要获取的数目items，不输入默认获取所有条目，最后运行
-TianmaoSpider().get_data(shop_url,items)
-2. 多条店铺链接修改shop_urls的内容，例如shop_urls=[shop_url1,shop_url2]，获取条目修改
- result.append(pool.apply_async(TianmaoSpider().get_data,(url,items)))
- 的items部分，例如
- result.append(pool.apply_async(TianmaoSpider().get_data,(url,2)))执行代码输出结果
+## Usage
+> get_shop_items.py
+获取单个店铺所有商品
+包含:
+店铺基本信息
+店铺所有商品
+商品的基本信息
+商品的评论(一页)
+未办事项:
+商品的图文信息
 
+
+例如:
+```
+if __name__ == '__main__':
+    url = 'https://xiaomi.m.tmall.com/'
+    get_data(url)
+```
+然后运行即可, 结果保存在`data.json`中.
